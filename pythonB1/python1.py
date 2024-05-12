@@ -7,7 +7,8 @@ class SinhVien:
         self.diem_hoa = diem_hoa
 
     def diem_trung_binh(self):
-        return (self.diem_toan + self.diem_van + self.diem_hoa) / 3
+        diem_tb = (self.diem_toan + self.diem_van + self.diem_hoa) / 3
+        return round(diem_tb, 2)
 
 # Tạo danh sách sinh viên
 danh_sach_sv = [
