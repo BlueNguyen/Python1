@@ -11,11 +11,11 @@ class SinhVien:
 
 # Tạo danh sách sinh viên
 danh_sach_sv = [
-    SinhVien("SV001", "Nguyen Van A", 7, 8, 6),
+    SinhVien("SV001", "Nguyen Van A", 7, 8, 0),
     SinhVien("SV002", "Tran Thi B", 5, 6, 4),
     SinhVien("SV003", "Le Van C", 6, 7, 8),
     SinhVien("SV004", "Pham Thi D", 4, 5, 6),
-    SinhVien("SV005", "Hoang Van E", 8, 9, 7)
+    SinhVien("SV005", "Hoang Van E", 8, 9, 0)
 ]
 
 # In thông tin các sinh viên có điểm trung bình lớn hơn 5
