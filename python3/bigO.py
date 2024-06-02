@@ -1,7 +1,7 @@
 #***BÀI TẬP 1: Xác định Big O notation
 i = 0             #=> O(1)  --> 1
 while (i < n):    #=> O(n) - vòng lặp này sẽ chạy n lần --> n
-    i = i + 1     #=> O(1) - câu lệnh này được thực hiện n lần trong vòng lặp --> n
+    i = i + 1     #=> O(n) - câu lệnh này được thực hiện n lần trong vòng lặp --> n
 
 #---> F(n)= 1+2n
 #---> O(n)
@@ -10,7 +10,7 @@ while (i < n):    #=> O(n) - vòng lặp này sẽ chạy n lần --> n
 #***BÀI TẬP 2: Xác định Big O notation
 i = 0               #=> O(1)  --> 1
 while (i < n):      #=> O(n) - vòng lặp này sẽ chạy n/100 lần --> n/100
-    i = i + 100     #=> O(1) - câu lệnh này được thực hiện n/100 lần trong vòng lặp --> n/100
+    i = i + 100     #=> O(n) - câu lệnh này được thực hiện n/100 lần trong vòng lặp --> n/100
 
 #---> F(n)= 1+2n/100
 #---> O(n)
