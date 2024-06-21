@@ -9,16 +9,14 @@ while (a<3):        #O(log n)
 #O(logn)×O(logn)=O((logn)^2) 
 
 ###Bài 3: Ôn Tập Big O  
-for a in range(0, n):                  # n lần
-    for b in range(a, n):              # (n - a) lần cho mỗi giá trị của a
-        print("a")                     # n+(n−1)+(n−2)+…+1= [n(n+1)]/2 = O(n^2)
+for a in range(0, n):               # n lần
+    for b in range(a, n):           # n+(n−1)+(n−2)+…+1= [n(n+1)]/2 = O(n^2)
+        print("a")
+    for c in range(0, n):           # Tổng 2 vòng lặp c & d :     n* n = O(n^2)
+        for d in range(0, n):          
+            print("a")
 
-
-for c in range(0, n):                  # n lần
-    for d in range(0, n):              # n lần
-        print("a")                     # n * n = n^2   => O(n^2)
-
-#  ====> O(n^2) + O(n^2)= 2[O(n^2)] => O(n^2) 
+#  ====> O(n) * O(n^2) = O(n^3) 
 
 ###Bài 1: Ôn Tập Big O
 i = 0             #=> O(1)  --> 1
