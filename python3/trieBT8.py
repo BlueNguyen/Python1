@@ -5,3 +5,6 @@ products = ["cat", "banana", "obama", "batman", "car", "cow", "alibaba"]
 for i in range(len(products)):
     if products[i][:2] == "ba":
         print(f'Phần tử "{products[i]}" có chỉ số {i}')
+
+
+
