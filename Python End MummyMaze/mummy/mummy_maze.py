@@ -55,17 +55,22 @@ mummyRight = pygame.image.load("./mummy/image/mummy/redright.png")
 wallX, wallY, wallW, wallH = 400, 200, 10, 100
 wallX2, wallY2, wallW2, wallH2 = 200, 300, 10, 100
 wallX3, wallY3, wallW3, wallH3 = 200, 400, 100, 7
-
 # Victory and Game Over Images
 VICTORY_IMAGE = pygame.transform.scale(
     pygame.image.load('./mummy/image/victory.png'), (600, 600))
 GAME_OVER_IMAGE = pygame.transform.scale(
     pygame.image.load('./mummy/image/game_over.png'), (600, 600))
 
-# Hình exit 
+# Hình exit 1
 EXIT_IMAGE = pygame.transform.scale(
-    pygame.image.load('./mummy/image/exit.png'), (100, 20))
-exit_x, exit_y = 200, 580
+    pygame.image.load('./mummy/image/exit.png'), (100, 30))
+exit_x, exit_y = 200, 570
+
+# Hình exit 2
+EXIT_IMAGE2 = pygame.transform.scale(
+    pygame.image.load('./mummy/image/exit2.png'), (30, 100))
+exit_x2, exit_y2 = 570, 200
+
 # Hình bẫy game
 TRAP_IMAGE = pygame.transform.scale(
     pygame.image.load('./mummy/image/trap.png'), (100, 100)).convert_alpha()  # Điều chỉnh kích thước hình bẫy theo ý muốn
@@ -316,6 +321,7 @@ def main():
                          (wallX3, wallY3, wallW3, wallH3))
         
         DISPLAYSURF.blit(EXIT_IMAGE, (exit_x, exit_y))  # Vẽ lối exit
+        DISPLAYSURF.blit(EXIT_IMAGE2, (exit_x2, exit_y2))
         DISPLAYSURF.blit(TRAP_IMAGE, (trap_x, trap_y))  # Vẽ bẫy
 
         player.draw()
@@ -338,12 +344,13 @@ def main():
             pygame.quit()
 
         # Kiểm tra điều kiện thắng
-        win_x, win_y = 200, 600
-        if abs(player.x - win_x) < 10 and abs(player.y - win_y) < 10:
-            DISPLAYSURF.blit(VICTORY_IMAGE, (0, 0))
-            pygame.display.update()
-            pygame.time.wait(5000)
-            pygame.quit()
+        win_coords = [(200, 570), (570, 200)]  # Thêm các toạ độ chiến thắng
+        for win_x, win_y in win_coords:
+            if abs(player.x - win_x) < 10 and abs(player.y - win_y) < 10:
+                DISPLAYSURF.blit(VICTORY_IMAGE, (0, 0))
+                pygame.display.update()
+                pygame.time.wait(5000)
+                pygame.quit()
 
         # Kiểm tra va chạm với bẫy
         if player.x == trap_x and player.y == trap_y:
@@ -352,10 +359,7 @@ def main():
             pygame.time.wait(5000)
             pygame.quit()
             
-
         pygame.display.update()
         pygame.time.Clock().tick(60)
         
-
-
 main()
